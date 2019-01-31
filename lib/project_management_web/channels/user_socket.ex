@@ -3,8 +3,12 @@ defmodule ProjectManagementWeb.UserSocket do
 
   ## Channels
   # channel "room:*", ProjectManagementWeb.RoomChannel
-
-  # Socket params are passed from the client and can
+	
+	socket "/socket", HelloWeb.UserSocket,
+    websocket: [timeout: 45_000],
+    longpoll: false
+  
+	# Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
   # verification, you can put default assigns into
   # the socket that will be set for all channels, ie
